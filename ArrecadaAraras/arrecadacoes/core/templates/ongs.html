@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'ong.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Arrecada Araras</title>
+    <link rel="icon" href="{% static 'img/arara_nav.png' %}">
+</head>
+<body>
+   <!-- Navbar -->
+   <header>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a href="{% url 'core:index' %}">
+                <img src="{% static 'img/logo_nav.png' %}" alt="Logotipo" height="55" class="img-nav">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+                <!--botão da navbar no small-->
+                <i class="bi bi-list bi-color"></i>
+            </button>
+            <!--<div class="collapse navbar-collapse" id="navCollapse">-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{% url 'core:index' %}" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'core:ongs' %}" class="nav-link">ONGs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'core:index' %}" class="nav-link">Quem Somos?</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                   <button class="btn-nav">
+                       <a href="{% url 'core:meu_perfil' %}" class="nav-link"><i class="bi bi-person-circle"></i>{{ user.username }}</a>
+                   </button>
+               </li>
+                    <li class="nav-item">
+                        <a href="{% url 'core:logout' %}" class="nav-link">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <button class="btn-nav">
+                            <a href="{% url 'core:login' %}" class="nav-link"><i class="bi bi-person-circle"></i>Login</a>
+                        </button>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>    
+
+<div class="bg-light">
+    <div class="container py-5">
+        {% for ong in ongs %}
+        <div class="hospital-card p-4 mx-auto d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center mb-4">
+                <div class="hospital-info">
+                    <h2>{{ ong.nome }}</h2>
+                    <p>Horário de Funcionamento: <span>{{ ong.horario_funcionamento }}</span></p>
+                    <p>Endereço: {{ ong.endereco }}</p>
+                </div>
+            </div>
+            <div class="d-flex">
+                <button class="buttonInfo" data-bs-toggle="modal" data-bs-target="#moreInfoModal{{ ong.id }}">Mais informações</button>
+                <div style="margin-left: 10px;">
+                    <button class="buttonDoar" data-bs-toggle="modal" data-bs-target="#donationModal{{ ong.id }}">Doar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de mais informações -->
+        <div class="modal fade" id="moreInfoModal{{ ong.id }}" tabindex="-1" aria-labelledby="moreInfoModal{{ ong.id }}Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="moreInfoModal{{ ong.id }}Label">Mais Informações - {{ ong.nome }}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Conteúdo do modal com mais informações -->
+                        <p>Endereço: {{ ong.endereco }}</p>
+                        <p>Horário de Funcionamento: {{ ong.horario_funcionamento }}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal de doação -->
+        <div class="modal fade" id="donationModal{{ ong.id }}" tabindex="-1" aria-labelledby="donationModal{{ ong.id }}Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="pixForm{{ forloop.counter }}" action="{% url 'core:doacao' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="ong_nome" value="{{ ong.nome }}">
+                        <input type="hidden" name="item_doado" value="Pacote de Papel Higiênico 24 rolos">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="donationModal{{ ong.id }}Label">Doação para {{ ong.nome }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row text-center mb-4">
+                                <div class="col-4">
+                                    <h6 class="font-semibold">Tipo de Doação</h6>
+                                    <select name="tipo_doacao" class="form-select" required>
+                                        <option value="">Selecione o tipo de doação</option>
+                                        {% for tipo_doacao in tipos_doacao %}
+                                        <option value="{{ tipo_doacao.nome }}">{{ tipo_doacao.nome }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="font-semibold">Valor</h6>
+                                    <select name="valor_doacao" class="form-select" required>
+                                        <option value="">Selecione o valor de doação</option>
+                                        {% for valor_doacao in valores_doacao %}
+                                            <option value="{{ valor_doacao.valor }}">R$ {{ valor_doacao.valor }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class="font-semibold">Pagamento</h6>
+                                    <button type="submit" class="buttonInfo">Pagamento via Pix</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<footer>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+              <h4>Contatos</h4>
+              <ul class="navbar-nav">
+                  <li><a href="">Telefone: (19) 3541-3004</a></li>
+                  <li><a href="https://fatecararas.cps.sp.gov.br/">Endereço: Jardim Jose Ometto II, Araras - SP, 13606-360</a></li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+              <h4>Links úteis</h4>
+              <ul class="navbar-nav">
+                  <li><a href="{% url 'core:index' %}">Página Inicial</a></li>
+                  <li><a href="{% url 'core:ongs' %}">ONGs</a></li>
+                  <li><a href="{% url 'core:index' %}">Quem Somos?</a></li>
+              </ul>
+          </div>
+          <div class="col-md-3">
+              <h4>Midias sociais</h4>
+              <ul class="social-media">
+                  <i class="bi bi-facebook"></i>
+                  <i class="bi bi-instagram"></i>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+  
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

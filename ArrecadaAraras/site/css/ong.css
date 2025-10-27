@@ -1,0 +1,340 @@
+/*navbar*/
+nav {
+  height: 60px;
+  box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+  background-color: #133C74;
+  text-align: center;
+}
+
+.navbar li a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar li a:hover {
+  color:rgb(0, 179, 255);
+}
+
+.btn-nav {
+  background-color: #133C74;
+  color: rgba(218, 224, 230, 0.582);
+  border: 2px solid rgba(218, 224, 230, 0.582);
+  border-radius: 10px;
+  float: right;
+}
+
+.btn-nav:hover {
+  border: 2px solid;
+  box-shadow: 0px 4px 4px rgba(218, 224, 230, 0.582);
+}
+
+.amarelinho{
+  color: #FEC634;
+  font-size: 150%;
+  text-decoration: none;
+}
+/*cadastro*/
+
+.buttonenviarcadastro{
+  background-color: #19A438;
+  border: none;
+  padding: 15px;
+  width: 10rem;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;}
+
+  .cardtextblack{
+  border-radius: 15px;
+  background-color:#133C74;
+}
+
+.inputcadastro{
+
+      padding: 15px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      border-radius: 15px;
+}
+.direitinha{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* PAGINA login*/
+     
+  .inputlogin{
+  padding: 15px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  border-radius: 15px;
+  }
+
+.login {
+  background-color: #133C74;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 80px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+
+button.marx:hover{
+  background-color:#19875431;
+  cursor: pointer;
+}         
+button:hover{
+  background-color: deepskyblue;
+  cursor: pointer;
+}
+button.modallogin{
+  background-color:#133C74;
+  cursor: pointer;
+}
+
+button.modalcadastro{
+  background-color:#19A438;
+  cursor: pointer;
+}
+
+.buttoncadastro{
+  background-color: #19A438;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+     
+ }
+ .buttonenviar{
+  background-color: dodgerblue;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  
+}
+/* RODAPE*/
+footer {
+  background: #133C74;
+  padding: 35px;
+  position: relative;
+  font-family:'Roboto', sans-serif; 
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .7), 0 2px 8px 0 rgba(0, 0, 0, .5), 0 1px 5px 0 rgba(0, 0, 0, .1);
+  margin-top: 10px;
+}
+
+footer h4 {
+  color: white;
+  font-size: 20px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-family:'Roboto', sans-serif;
+}
+
+footer h4:hover {
+  color:rgb(0, 179, 255); 
+}
+
+footer .navbar-nav i{
+  text-align: justify;
+}
+
+footer .navbar-nav a{
+  color:#d4d4d4; 
+  font-weight: 25px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+footer .navbar-nav a:hover{
+  color:rgb(0, 179, 255); 
+}
+
+footer ul li{
+  list-style: none;
+}
+
+footer ul li{
+  float: right;
+  margin: 0 20px;
+  padding-top: 10px;
+}
+
+footer p span {
+  color: #acacac; 
+}
+
+.social-media {
+  display: inline-block;     
+}
+
+.social-media i {
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  margin: 10px 3px;
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  transition: all .3s ease;
+  background-color: #19A438;
+  border-radius: 50%;
+  color: white;
+}
+.social-media i:hover {
+  transform: scale(1.2);
+}
+
+hr {
+  margin: 80px 20px;
+}
+
+#politicas {
+  margin-top: 90px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+
+  .login {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      padding: 80px;
+      border-radius: 15px;
+      color: #fff;
+      text-align: center;}
+  }
+  .direitinha{
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+
+@media screen and (min-width: 764px) and (max-width:1180px) {
+  
+  .buttonenviarcadastro{
+      background-color: orangered;
+      border: none;
+      padding: 15px;
+      width: 10rem;
+      border-radius: 10px;
+      color: white;
+      font-size: 15px;}
+  }
+  .direitinha{
+      margin-left: auto;
+      margin-right: auto;
+  }
+   
+    .carousel{
+    margin-top: 5%;
+  }
+
+
+/* estilo ongs */
+
+  .py-5{
+    margin-top: 2rem;
+  }
+
+  .hospital-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .hospital-card.dark-mode {
+    background-color: #374151;
+  }
+  .hospital-logo {
+    width: 6rem;
+    height: 6rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+  }
+  .hospital-info h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .hospital-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #4b5563;
+  }
+  .hospital-info p span {
+    color: #10b981;
+    font-weight: 600;
+  }
+  .hospital-info.dark-mode p {
+    color: #9ca3af;
+  }
+  
+  .buttonDoar {
+    background-color: #19A438;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    margin-left: 2rem;
+    padding: 10px 50px;
+    border-radius: 10px;
+  }
+
+  .buttonDoar:hover {
+    background-color: #059669;
+  }
+
+  .buttonInfo {
+    background-color: #ffffff;
+    color: #1A52A5;
+    border-color: #1465de;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-right: auto;
+    padding: 2px 10px;
+
+  }
+  .buttonInfo:hover {
+    background-color: #1a4dba;
+    color: #ffffff;
+  }
+
+ /* ESTILO MODAL */
+
+  .modal-custom .modal-content {
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+  .modal-custom .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .modal-custom .modal-body {
+    padding-top: 0;
+  }
+  .button {
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+  }
+  .button:hover {
+    background-color: #2563eb;
+  }
+  .info-text {
+    color: #4b5563;
+  }

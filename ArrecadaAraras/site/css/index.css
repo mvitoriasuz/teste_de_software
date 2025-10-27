@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* 
+------------------------------------------------------------
+Apresentação
+------------------------------------------------------------
+*/
+
+.body{
+    background-color: hsl(0, 0%, 28%); /* Ajuste para combinar com seu fundo */
+
+}
+
+#apresentacao {
+    background-image: url(../img/background_index.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 12rem;
+    height: 600px;
+}
+
+#mensagem h1{
+    color:#ffffff;
+    font-family: 'Jost';
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 5%;
+}
+
+#mensagem span {
+    color: #58C9ED;
+    font-family: 'Jost';
+    font-size: 50px;
+    letter-spacing: 5%;
+    font-weight: 700;
+}
+
+.texto_convite{
+    color: #ffffff;
+    font-family: 'Jost';
+    font-weight: 400;
+    width: 69% !important; 
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-bottom: 2rem;
+    margin-top: var(--bs-gutter-y);
+
+}
+
+.button {
+    background-color: #2076CB;
+    color: #fff;
+    font-family: 'Jost';
+    font-weight: 700;
+    padding: 8px 3%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+/* 
+------------------------------------------------------------
+Apresentação da Nossa empresa
+------------------------------------------------------------
+*/
+
+#nossa_empresa{
+    padding-top: 5rem;
+    padding: 7rem;
+}
+
+.titulo{
+    color: #2076CB;
+    text-align: center;
+    font-family: 'Jost';
+    font-size: 35px;
+    letter-spacing: 5%;
+    font-weight: 700;
+}
+
+.text_nossa_empresa{
+    color: #453E3E;
+    font-family: 'Jost';
+    font-size: 20px;
+    letter-spacing: 5%;
+    font-weight: 400;
+}
+
+/* 
+------------------------------------------------------------
+Como eu realizo uma doação?
+------------------------------------------------------------
+*/
+
+#passo_a_passo{
+    background-image: url(../img/Imagem_de_fundo_onda.jpg);
+    background-repeat: no-repeat;
+    padding-top: 600px;
+    padding-top: 10rem;
+    text-align: center;
+    padding-bottom: 5rem;  
+}
+
+#passos h3{
+    color:#ffffff;
+    font-family: 'Jost';
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 5%;
+}
+
+#PASSO{
+    font-family: 'Jost';
+    font-weight: 700;
+    color: #ffffff;
+}
+
+#texto_passos{
+    font-family: 'Jost';
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* 
+------------------------------------------------------------
+Visão Missão Valores
+------------------------------------------------------------
+*/
+
+@media (min-width: 768px) {
+    #missao-container .col-md-6 {
+        flex: 0 0 auto;
+        width: 50%;
+        margin-right: -15rem;
+    }
+}
+
+
+.imagens{
+    width: 15rem;
+    height: 15rem;
+}

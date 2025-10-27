@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carregar a tag estática -->
+    {% load static %}
+    <title>Arrecada Araras</title>
+    <!-- ICONE -->
+    <link rel="icon" href="{% static 'img/arara_nav.png' %}">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cores.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'reset.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="wrapper"> 
+        <!-- Navbar -->
+        <header>
+            <nav class="navbar navbar-expand-md fixed-top">
+                <div class="container">
+                    <a href="{% url 'core:index' %}"><img src="{% static 'img/logo_nav.png' %}" alt="Logotipo" height="55" class="img-nav"></a>
+                    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+                        <i class="bi bi-list bi-color"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navCollapse">
+                        <ul class="navbar-nav me-auto navbar-nav-center">
+                            <li class="nav-item">
+                                <a href="{% url 'core:index' %}" class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'core:ongs' %}" class="nav-link">ONGs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#carrossel" class="nav-link">Quem Somos?</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-nav">
+                            {% if user.is_authenticated %}
+                                <!-- Se o usuário estiver autenticado, exiba seu nome e a opção de logout -->
+                                <li class="nav-item">
+                                    <button class="btn-nav">
+                                        <a href="{% url 'core:logout' %}" class="nav-link">Logout ({{ user.username }})</a>
+                                    </button>
+                                </li>
+                            {% else %}
+                                <!-- Se o usuário não estiver autenticado, exiba a opção de login -->
+                                <li class="nav-item">
+                                    <button class="btn-nav">
+                                        <a href="{% url 'core:login' %}" class="nav-link"><i class="bi bi-person-circle"></i>Login</a>
+                                    </button>
+                                </li>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main id="grad3" style="text-align:center;">   
+            <div class="container">
+                <div class="login containercentro">
+                    <img src="{% static 'img/arara_nav.png' %}" class="direitinha" width="150" alt="Sample image">
+                    <h3>Acessar</h3>
+                    <form method="post" action="{% url 'core:login' %}">
+                        {% csrf_token %}
+                        {% if error_message %} 
+                            <p style="color: red;">{{ error_message }}</p>
+                        {% endif %}
+                        <input type="email" placeholder="Email" name="email" class="inputlogin" required>
+                        <br><br>
+                        <input type="password" placeholder="Senha" name="password" class="inputlogin" required>
+                        <br><br>
+                        <button class="buttonenviar" type="submit">Enviar</button>
+                        <br><br>
+                    </form>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <a href="{% url 'core:cadastro' %}">
+                            <button type="button" class="buttoncadastro">Cadastre-se</button>
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        </main>              
+        
+        <!-- Rodapé -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h4>Contatos</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="">Telefone: (19) 3541-3004</a></li>
+                            <li><a href="https://fatecararas.cps.sp.gov.br/">Endereço: Jardim Jose Ometto II, Araras - SP, 13606-360</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Links úteis</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="{% url 'core:index' %}">Página Inicial</a></li>
+                            <li><a href="{% url 'core:ongs' %}">ONGs</a></li>
+                            <li><a href="{% url 'core:index' %}">Quem Somos?</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>Midias sociais</h4>
+                        <ul class="social-media">
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-instagram"></i>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXlRYoWsx9gDp6fxczd9TYU8C4IIQV9v2jYZxtfqHV+0Szlt8f0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eycH8GhsBxxdoGd0EDG5zfoV5ZCvM4B5RI5V2D5Hyy8F2Cp2e7CVgLP" crossorigin="anonymous"></script>
+</body>
+</html>

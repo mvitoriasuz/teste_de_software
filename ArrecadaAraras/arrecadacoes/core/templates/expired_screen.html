@@ -1,0 +1,144 @@
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'qrcode.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Arrecada Araras</title>
+    <style>
+        /* Estilos opcionais para melhorar a aparência */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #257cd3, #adabab);
+        }
+        #countdown {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        #countdown-timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+        #qrcode {
+            margin-top: 2rem;
+        }
+        .doacao-item {
+            margin-bottom: 0.5rem;
+        }
+        #ultimas-doacoes {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        #ultimas-doacoes ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #ultimas-doacoes ul li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a href="{% url 'core:index' %}">
+                <img src="{% static 'img/logo_nav.png' %}" alt="Logotipo" height="55" class="img-nav">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navCollapse">
+                <i class="bi bi-list bi-color"></i>
+            </button>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{% url 'core:index' %}" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'core:ongs' %}" class="nav-link">ONGs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#missao_visao_valores" class="nav-link">Quem Somos?</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                       <button class="btn-nav">
+                           <a href="{% url 'core:meu_perfil' %}" class="nav-link"><i class="bi bi-person-circle"></i>{{ user.username }}</a>
+                       </button>
+                   </li>
+                    <li class="nav-item">
+                        <a href="{% url 'core:logout' %}" class="nav-link">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <button class="btn-nav">
+                            <a href="{% url 'core:login' %}" class="nav-link"><i class="bi bi-person-circle"></i>Login</a>
+                        </button>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main id="grad3">  
+    <div class="container">
+        <div class="login containercentro">
+            <div id="countdown">
+                <h1>Esta página expirará em:</h1>
+                <div id="countdown-timer">10</div>
+            </div>
+
+            <!-- QR Code estático -->
+            <div id="qrcode">
+                <img src="{% static 'img/qrcode.png' %}" alt="QR Code" width="200">
+            </div>
+
+            <!-- Lista de últimas doações -->
+            <div id="ultimas-doacoes">
+                <h2>Conselho do dia:</h2>
+                {% if advice %}
+                <p>{{ advice }}</p>
+                    {% else %}
+                <p>Não foi possível obter um conselho neste momento.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUGzDM2pWlp2XquS01JSYjv3hxHm13pFsDJHivdE9I4GgvlA5vCdfzEMK3u62Dso" crossorigin="anonymous"></script>
+<script>
+    function updateCountdown() {
+        var seconds = parseInt(document.getElementById('countdown-timer').textContent);
+
+        if (seconds === 0) {
+            window.location.href = "{% url 'core:index' %}";
+            return;
+        }
+
+        document.getElementById('countdown-timer').textContent = seconds - 1;
+
+        setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
+</script>
+
+</body>
+</html>
