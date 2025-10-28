@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0014_remove_doacao_tipo_doacao'),
+        ("core", "0014_remove_doacao_tipo_doacao"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ong',
-            name='informacoes_adicionais',
+            model_name="ong",
+            name="informacoes_adicionais",
             field=models.TextField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='ong',
-            name='tipo_doacao',
+            model_name="ong",
+            name="tipo_doacao",
             field=models.CharField(blank=True, max_length=100, null=True),
         ),
     ]

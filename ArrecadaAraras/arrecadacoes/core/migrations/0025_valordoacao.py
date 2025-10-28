@@ -6,15 +6,28 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0024_delete_valordoacao_alter_tipodoacao_options_and_more'),
+        ("core", "0024_delete_valordoacao_alter_tipodoacao_options_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ValorDoacao',
+            name="ValorDoacao",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('valor', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Valor da Doação')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "valor",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=8, verbose_name="Valor da Doação"
+                    ),
+                ),
             ],
         ),
     ]

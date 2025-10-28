@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0005_delete_customuser'),
+        ("core", "0005_delete_customuser"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='doacao',
-            name='descricao_doacao',
-            field=models.TextField(blank=True, null=True, verbose_name='Descrição da Doação'),
+            model_name="doacao",
+            name="descricao_doacao",
+            field=models.TextField(
+                blank=True, null=True, verbose_name="Descrição da Doação"
+            ),
         ),
     ]

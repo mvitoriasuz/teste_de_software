@@ -6,19 +6,32 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0021_alter_tipodoacao_valor_doacao'),
+        ("core", "0021_alter_tipodoacao_valor_doacao"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ValorDoacao',
+            name="ValorDoacao",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('valor_doacao', models.DecimalField(decimal_places=2, max_digits=8, verbose_name='Valor da Doação')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "valor_doacao",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=8, verbose_name="Valor da Doação"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Valor de Doação',
-                'verbose_name_plural': 'Valores de Doação',
+                "verbose_name": "Valor de Doação",
+                "verbose_name_plural": "Valores de Doação",
             },
         ),
     ]

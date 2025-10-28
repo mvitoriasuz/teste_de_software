@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0017_remove_ong_tipo_doacao'),
+        ("core", "0017_remove_ong_tipo_doacao"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='tipodoacao',
-            name='valor',
+            model_name="tipodoacao",
+            name="valor",
             field=models.DecimalField(decimal_places=2, default=0, max_digits=8),
         ),
     ]

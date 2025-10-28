@@ -6,22 +6,29 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0025_valordoacao'),
+        ("core", "0025_valordoacao"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='doacao',
-            name='descricao_doacao',
+            model_name="doacao",
+            name="descricao_doacao",
         ),
         migrations.AddField(
-            model_name='doacao',
-            name='tipo_doacao',
-            field=models.CharField(default='Default Tipo', max_length=100, verbose_name='Tipo de Doação'),
+            model_name="doacao",
+            name="tipo_doacao",
+            field=models.CharField(
+                default="Default Tipo", max_length=100, verbose_name="Tipo de Doação"
+            ),
         ),
         migrations.AddField(
-            model_name='doacao',
-            name='valor_doacao',
-            field=models.DecimalField(decimal_places=2, default=0.0, max_digits=8, verbose_name='Valor da Doação'),
+            model_name="doacao",
+            name="valor_doacao",
+            field=models.DecimalField(
+                decimal_places=2,
+                default=0.0,
+                max_digits=8,
+                verbose_name="Valor da Doação",
+            ),
         ),
     ]

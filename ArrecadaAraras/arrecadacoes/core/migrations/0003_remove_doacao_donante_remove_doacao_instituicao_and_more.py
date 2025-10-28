@@ -6,36 +6,42 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0002_instituicao_doacao'),
+        ("core", "0002_instituicao_doacao"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='doacao',
-            name='donante',
+            model_name="doacao",
+            name="donante",
         ),
         migrations.RemoveField(
-            model_name='doacao',
-            name='instituicao',
+            model_name="doacao",
+            name="instituicao",
         ),
         migrations.AddField(
-            model_name='doacao',
-            name='item_doado',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='Item Doado'),
+            model_name="doacao",
+            name="item_doado",
+            field=models.CharField(
+                blank=True, max_length=100, null=True, verbose_name="Item Doado"
+            ),
         ),
         migrations.AddField(
-            model_name='doacao',
-            name='ong_nome',
-            field=models.CharField(blank=True, max_length=100, null=True, verbose_name='Nome da ONG'),
+            model_name="doacao",
+            name="ong_nome",
+            field=models.CharField(
+                blank=True, max_length=100, null=True, verbose_name="Nome da ONG"
+            ),
         ),
         migrations.AddField(
-            model_name='doacao',
-            name='quantidade_doada',
-            field=models.PositiveIntegerField(blank=True, null=True, verbose_name='Quantidade Doada'),
+            model_name="doacao",
+            name="quantidade_doada",
+            field=models.PositiveIntegerField(
+                blank=True, null=True, verbose_name="Quantidade Doada"
+            ),
         ),
         migrations.AlterField(
-            model_name='doacao',
-            name='data_doacao',
+            model_name="doacao",
+            name="data_doacao",
             field=models.DateTimeField(auto_now_add=True),
         ),
     ]

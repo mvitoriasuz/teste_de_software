@@ -6,18 +6,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0011_rename_instituicao_ong'),
+        ("core", "0011_rename_instituicao_ong"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='ong',
-            name='endereco',
-            field=models.CharField(default='Endereço padrão', max_length=255),
+            model_name="ong",
+            name="endereco",
+            field=models.CharField(default="Endereço padrão", max_length=255),
         ),
         migrations.AddField(
-            model_name='ong',
-            name='horario_funcionamento',
-            field=models.CharField(default='24 horas', max_length=100),
+            model_name="ong",
+            name="horario_funcionamento",
+            field=models.CharField(default="24 horas", max_length=100),
         ),
     ]

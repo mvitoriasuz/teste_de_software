@@ -6,20 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0023_alter_tipodoacao_options_and_more'),
+        ("core", "0023_alter_tipodoacao_options_and_more"),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name='ValorDoacao',
+            name="ValorDoacao",
         ),
         migrations.AlterModelOptions(
-            name='tipodoacao',
+            name="tipodoacao",
             options={},
         ),
         migrations.AlterField(
-            model_name='tipodoacao',
-            name='nome',
-            field=models.CharField(max_length=100, verbose_name='Nome do Tipo de Doação'),
+            model_name="tipodoacao",
+            name="nome",
+            field=models.CharField(
+                max_length=100, verbose_name="Nome do Tipo de Doação"
+            ),
         ),
     ]

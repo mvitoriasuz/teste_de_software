@@ -7,19 +7,26 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='cadastromodel',
+            name="cadastromodel",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=200, verbose_name='Nome')),
-                ('cpf', models.CharField(max_length=14, verbose_name='CPF')),
-                ('email', models.EmailField(max_length=254, verbose_name='email')),
-                ('senha', models.CharField(max_length=50, verbose_name='senha')),
-                ('data_nasc', models.DateField(verbose_name='data_nasc')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nome", models.CharField(max_length=200, verbose_name="Nome")),
+                ("cpf", models.CharField(max_length=14, verbose_name="CPF")),
+                ("email", models.EmailField(max_length=254, verbose_name="email")),
+                ("senha", models.CharField(max_length=50, verbose_name="senha")),
+                ("data_nasc", models.DateField(verbose_name="data_nasc")),
             ],
         ),
     ]

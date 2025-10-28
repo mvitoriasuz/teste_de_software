@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0008_remove_cadastromodel_cpf_and_more'),
+        ("core", "0008_remove_cadastromodel_cpf_and_more"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='Instituicao',
-            new_name='Ong',
+            old_name="Instituicao",
+            new_name="Ong",
         ),
     ]

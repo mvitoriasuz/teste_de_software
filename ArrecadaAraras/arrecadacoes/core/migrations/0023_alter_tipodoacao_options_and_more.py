@@ -6,16 +6,19 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0022_valordoacao'),
+        ("core", "0022_valordoacao"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='tipodoacao',
-            options={'verbose_name': 'Tipo de Doação', 'verbose_name_plural': 'Tipos de Doação'},
+            name="tipodoacao",
+            options={
+                "verbose_name": "Tipo de Doação",
+                "verbose_name_plural": "Tipos de Doação",
+            },
         ),
         migrations.RemoveField(
-            model_name='tipodoacao',
-            name='valor_doacao',
+            model_name="tipodoacao",
+            name="valor_doacao",
         ),
     ]
