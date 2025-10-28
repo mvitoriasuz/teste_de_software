@@ -1,5 +1,16 @@
-from django.db import models
+"""
+Modelos principais do sistema de arrecadações.
 
+Define as entidades utilizadas no sistema:
+- CadastroModel: Cadastro simples de usuários.
+- Cliente: Clientes registrados.
+- Ong: Organizações não governamentais cadastradas.
+- TipoDoacao: Tipos possíveis de doações.
+- ValorDoacao: Valores pré-definidos de doações.
+- Doacao: Registro das doações realizadas.
+"""
+
+from django.db import models
 
 class CadastroModel(models.Model):
     """

@@ -7,9 +7,9 @@ core\advice_api.py:5:0: R0903: Too few public methods (1/2) (too-few-public-meth
 core\forms.py:20:4: R0903: Too few public methods (0/2) (too-few-public-methods)
 core\forms.py:110:4: R0903: Too few public methods (0/2) (too-few-public-methods)
 ************* Module core.models
-core\models.py:18:4: E0307: __str__ does not return str (invalid-str-returned)
-core\models.py:36:4: E0307: __str__ does not return str (invalid-str-returned)
-core\models.py:69:4: E0307: __str__ does not return str (invalid-str-returned)
+core\models.py:29:4: E0307: __str__ does not return str (invalid-str-returned)
+core\models.py:47:4: E0307: __str__ does not return str (invalid-str-returned)
+core\models.py:80:4: E0307: __str__ does not return str (invalid-str-returned)
 ************* Module core.services
 core\services.py:5:0: W0404: Reimport 'datetime' (imported line 2) (reimported)
 core\services.py:40:15: W0718: Catching too general exception Exception (broad-exception-caught)
