@@ -1,0 +1,213 @@
+************* Module core.advice_api
+core\advice_api.py:38:16: W0621: Redefining name 'translated_advice' from outer scope (line 53) (redefined-outer-name)
+core\advice_api.py:45:15: W0718: Catching too general exception Exception (broad-exception-caught)
+core\advice_api.py:33:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+core\advice_api.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module core.forms
+core\forms.py:20:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+core\forms.py:110:4: R0903: Too few public methods (0/2) (too-few-public-methods)
+************* Module core.models
+core\models.py:18:4: E0307: __str__ does not return str (invalid-str-returned)
+core\models.py:36:4: E0307: __str__ does not return str (invalid-str-returned)
+core\models.py:69:4: E0307: __str__ does not return str (invalid-str-returned)
+************* Module core.services
+core\services.py:5:0: W0404: Reimport 'datetime' (imported line 2) (reimported)
+core\services.py:40:15: W0718: Catching too general exception Exception (broad-exception-caught)
+core\services.py:34:22: E1101: Class 'Cliente' has no 'objects' member (no-member)
+core\services.py:34:12: W0612: Unused variable 'cliente' (unused-variable)
+core\services.py:8:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+core\services.py:89:15: W0718: Catching too general exception Exception (broad-exception-caught)
+core\services.py:2:0: C0411: standard import "datetime.datetime" should be placed before third party import "pymongo.MongoClient" (wrong-import-order)
+core\services.py:3:0: C0411: standard import "typing.List" should be placed before third party import "pymongo.MongoClient" (wrong-import-order)
+core\services.py:5:0: C0411: standard import "datetime.datetime" should be placed before third party import "pymongo.MongoClient" and local import "models.Cliente" (wrong-import-order)
+core\services.py:5:0: C0412: Imports from package datetime are not grouped (ungrouped-imports)
+************* Module core.urls
+core\urls.py:10:0: C0103: Constant name "app_name" doesn't conform to UPPER_CASE naming style (invalid-name)
+************* Module core.views
+core\views.py:47:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+core\views.py:69:11: E1101: Class 'Ong' has no 'objects' member (no-member)
+core\views.py:70:19: E1101: Class 'TipoDoacao' has no 'objects' member (no-member)
+core\views.py:71:21: E1101: Class 'ValorDoacao' has no 'objects' member (no-member)
+core\views.py:98:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+core\views.py:110:11: E1101: Class 'Ong' has no 'objects' member (no-member)
+core\views.py:111:19: E1101: Class 'TipoDoacao' has no 'objects' member (no-member)
+core\views.py:112:21: E1101: Class 'ValorDoacao' has no 'objects' member (no-member)
+core\views.py:161:4: C0103: Variable name "URL_API" doesn't conform to snake_case naming style (invalid-name)
+core\views.py:165:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+core\views.py:14:0: C0411: third party import "django.http.HttpResponse" should be placed before local imports "forms.CadastroForm", "services.LogarUsuarioService", "models.Ong", "advice_api.AdviceAPI" (wrong-import-order)
+************* Module core.migrations.0001_initial
+core\migrations\0001_initial.py:1:0: C0103: Module name "0001_initial" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0002_instituicao_doacao
+core\migrations\0002_instituicao_doacao.py:1:0: C0103: Module name "0002_instituicao_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0003_remove_doacao_donante_remove_doacao_instituicao_and_more
+core\migrations\0003_remove_doacao_donante_remove_doacao_instituicao_and_more.py:1:0: C0103: Module name "0003_remove_doacao_donante_remove_doacao_instituicao_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0004_customuser
+core\migrations\0004_customuser.py:40:0: C0301: Line too long (117/100) (line-too-long)
+core\migrations\0004_customuser.py:50:0: C0301: Line too long (107/100) (line-too-long)
+core\migrations\0004_customuser.py:89:0: C0301: Line too long (138/100) (line-too-long)
+core\migrations\0004_customuser.py:104:0: C0301: Line too long (134/100) (line-too-long)
+core\migrations\0004_customuser.py:1:0: C0103: Module name "0004_customuser" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0005_delete_customuser
+core\migrations\0005_delete_customuser.py:1:0: C0103: Module name "0005_delete_customuser" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0006_doacao_descricao_doacao
+core\migrations\0006_doacao_descricao_doacao.py:1:0: C0103: Module name "0006_doacao_descricao_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0007_cliente_remove_doacao_quantidade_doada_and_more
+core\migrations\0007_cliente_remove_doacao_quantidade_doada_and_more.py:1:0: C0103: Module name "0007_cliente_remove_doacao_quantidade_doada_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0008_remove_cadastromodel_cpf_and_more
+core\migrations\0008_remove_cadastromodel_cpf_and_more.py:1:0: C0103: Module name "0008_remove_cadastromodel_cpf_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0009_rename_instituicao_ong
+core\migrations\0009_rename_instituicao_ong.py:1:0: C0103: Module name "0009_rename_instituicao_ong" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0010_rename_ong_instituicao
+core\migrations\0010_rename_ong_instituicao.py:1:0: C0103: Module name "0010_rename_ong_instituicao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0011_rename_instituicao_ong
+core\migrations\0011_rename_instituicao_ong.py:1:0: C0103: Module name "0011_rename_instituicao_ong" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0012_ong_endereco_ong_horario_funcionamento
+core\migrations\0012_ong_endereco_ong_horario_funcionamento.py:1:0: C0103: Module name "0012_ong_endereco_ong_horario_funcionamento" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0013_doacao_tipo_doacao
+core\migrations\0013_doacao_tipo_doacao.py:1:0: C0103: Module name "0013_doacao_tipo_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0014_remove_doacao_tipo_doacao
+core\migrations\0014_remove_doacao_tipo_doacao.py:1:0: C0103: Module name "0014_remove_doacao_tipo_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0015_ong_informacoes_adicionais_ong_tipo_doacao
+core\migrations\0015_ong_informacoes_adicionais_ong_tipo_doacao.py:1:0: C0103: Module name "0015_ong_informacoes_adicionais_ong_tipo_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0016_tipodoacao
+core\migrations\0016_tipodoacao.py:1:0: C0103: Module name "0016_tipodoacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0017_remove_ong_tipo_doacao
+core\migrations\0017_remove_ong_tipo_doacao.py:1:0: C0103: Module name "0017_remove_ong_tipo_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0018_tipodoacao_valor
+core\migrations\0018_tipodoacao_valor.py:1:0: C0103: Module name "0018_tipodoacao_valor" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0019_rename_valor_tipodoacao_valor_doacao
+core\migrations\0019_rename_valor_tipodoacao_valor_doacao.py:1:0: C0103: Module name "0019_rename_valor_tipodoacao_valor_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0020_alter_tipodoacao_valor_doacao
+core\migrations\0020_alter_tipodoacao_valor_doacao.py:1:0: C0103: Module name "0020_alter_tipodoacao_valor_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0021_alter_tipodoacao_valor_doacao
+core\migrations\0021_alter_tipodoacao_valor_doacao.py:1:0: C0103: Module name "0021_alter_tipodoacao_valor_doacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0022_valordoacao
+core\migrations\0022_valordoacao.py:1:0: C0103: Module name "0022_valordoacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0023_alter_tipodoacao_options_and_more
+core\migrations\0023_alter_tipodoacao_options_and_more.py:1:0: C0103: Module name "0023_alter_tipodoacao_options_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0024_delete_valordoacao_alter_tipodoacao_options_and_more
+core\migrations\0024_delete_valordoacao_alter_tipodoacao_options_and_more.py:1:0: C0103: Module name "0024_delete_valordoacao_alter_tipodoacao_options_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0025_valordoacao
+core\migrations\0025_valordoacao.py:1:0: C0103: Module name "0025_valordoacao" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0026_remove_doacao_descricao_doacao_doacao_tipo_doacao_and_more
+core\migrations\0026_remove_doacao_descricao_doacao_doacao_tipo_doacao_and_more.py:1:0: C0103: Module name "0026_remove_doacao_descricao_doacao_doacao_tipo_doacao_and_more" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0027_profile
+core\migrations\0027_profile.py:1:0: C0103: Module name "0027_profile" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.migrations.0028_delete_profile
+core\migrations\0028_delete_profile.py:1:0: C0103: Module name "0028_delete_profile" doesn't conform to snake_case naming style (invalid-name)
+************* Module core.tests.tests_cadastro
+core\tests\tests_cadastro.py:72:0: C0301: Line too long (130/100) (line-too-long)
+core\tests\tests_cadastro.py:16:0: W0105: String statement has no effect (pointless-string-statement)
+core\tests\tests_cadastro.py:48:8: W0105: String statement has no effect (pointless-string-statement)
+core\tests\tests_cadastro.py:55:8: E1101: Class 'CadastroModel' has no 'objects' member (no-member)
+core\tests\tests_cadastro.py:59:4: W0105: String statement has no effect (pointless-string-statement)
+core\tests\tests_cadastro.py:68:4: W0105: String statement has no effect (pointless-string-statement)
+core\tests\tests_cadastro.py:91:24: E1101: Class 'CadastroModel' has no 'objects' member (no-member)
+core\tests\tests_cadastro.py:95:15: E1101: Class 'CadastroModel' has no 'objects' member (no-member)
+core\tests\tests_cadastro.py:101:0: C0103: Class name "cadastroFormTest" doesn't conform to PascalCase naming style (invalid-name)
+core\tests\tests_cadastro.py:110:4: C0103: Method name "test_form_all_OK" doesn't conform to snake_case naming style (invalid-name)
+core\tests\tests_cadastro.py:112:16: R1735: Consider using '{"nome": 'João Silva', "email": 'joao.silva@example.com', "senha": 'Senha123.10carac', ... }' instead of a call to 'dict'. (use-dict-literal)
+core\tests\tests_cadastro.py:124:16: R1735: Consider using '{"cpf": '97848729512', "email": 'joao.silva@example.com', "senha": 'Senha123', ... }' instead of a call to 'dict'. (use-dict-literal)
+core\tests\tests_cadastro.py:137:16: R1735: Consider using '{"nome": 'João Silva', "senha": 'Senha123'}' instead of a call to 'dict'. (use-dict-literal)
+core\tests\tests_cadastro.py:146:16: R1735: Consider using '{"nome": 'João Silva', "email": 'joao.silva@example.com'}' instead of a call to 'dict'. (use-dict-literal)
+core\tests\tests_cadastro.py:14:0: C0411: standard import "datetime" should be placed before third party imports "django.test.TestCase", "django.shortcuts.resolve_url", "django.urls.reverse" and first party imports "core.models.CadastroModel", "core.forms.CadastroForm"  (wrong-import-order)
+core\tests\tests_cadastro.py:11:0: W0611: Unused reverse imported from django.urls (unused-import)
+core\tests\tests_cadastro.py:14:0: W0611: Unused import datetime (unused-import)
+************* Module core.tests.tests_index
+core\tests\tests_index.py:2:0: W0611: Unused reverse imported from django.urls (unused-import)
+************* Module core.tests.tests_login
+core\tests\tests_login.py:11:20: E1101: Class 'CadastroModel' has no 'objects' member (no-member)
+core\tests\tests_login.py:26:4: W0105: String statement has no effect (pointless-string-statement)
+core\tests\tests_login.py:43:0: C0103: Class name "Update_GET_Test" doesn't conform to PascalCase naming style (invalid-name)
+core\tests\tests_login.py:5:0: C0411: third party import "django.shortcuts.resolve_url" should be placed before first party imports "core.models.CadastroModel", "core.forms.LoginForm"  (wrong-import-order)
+core\tests\tests_login.py:5:0: C0412: Imports from package django are not grouped (ungrouped-imports)
+************* Module core.tests.__init__
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0022_valordoacao:[9:25]
+==core.migrations.0025_valordoacao:[9:25]
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name="ValorDoacao",
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ( (duplicate-code)
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0002_instituicao_doacao:[17:28]
+==core.migrations.0007_cliente_remove_doacao_quantidade_doada_and_more:[14:25]
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("nome", models.CharField(max_length=100)), (duplicate-code)
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0001_initial:[14:24]
+==core.migrations.0002_instituicao_doacao:[17:27]
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ), (duplicate-code)
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0002_instituicao_doacao:[33:43]
+==core.migrations.0004_customuser:[18:28]
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ), (duplicate-code)
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0007_cliente_remove_doacao_quantidade_doada_and_more:[14:24]
+==core.migrations.0022_valordoacao:[14:24]
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ), (duplicate-code)
+core\tests\__init__.py:1:0: R0801: Similar lines in 2 files
+==core.migrations.0016_tipodoacao:[14:24]
+==core.migrations.0025_valordoacao:[14:24]
+            fields=[
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ), (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 6.82/10 (previous run: 6.82/10, +0.00)
+
